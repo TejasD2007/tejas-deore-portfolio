@@ -1,0 +1,497 @@
+---
+---
+
+<section
+  id="experience"
+  class="experience-section relative overflow-hidden py-16 md:py-24 border-t border-[#ffffff10] text-[var(--white)]"
+>
+  <div class="experience-glow experience-glow-one"></div>
+  <div class="experience-glow experience-glow-two"></div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+
+    <!-- Section Header -->
+    <div class="experience-header">
+      <div class="experience-label">
+        <span>Experience</span>
+        <span class="experience-label-line"></span>
+      </div>
+
+      <h2 class="text-5xl md:text-6xl font-medium leading-tight mt-5">
+        Where I{" "}
+        <span class="experience-gradient-text">gained experience</span>
+      </h2>
+
+      <p class="experience-intro">
+        A hands-on internship exploring emerging technologies and practical
+        applications beyond the classroom.
+      </p>
+    </div>
+
+    <!-- Internship Card -->
+    <div class="experience-card mt-12 md:mt-16">
+
+      <!-- Top -->
+      <div class="experience-top">
+        <div>
+          <span class="experience-status">
+            Internship
+          </span>
+
+          <h3>
+            Emerging Technologies Intern
+          </h3>
+
+          <p class="experience-company">
+            Edunet Foundation &amp; AICTE
+          </p>
+        </div>
+
+        <div class="experience-date">
+          <span>12 JUN 2026</span>
+          <span class="date-arrow">→</span>
+          <span>10 JUL 2026</span>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="experience-divider"></div>
+
+      <!-- Content -->
+      <div class="experience-content">
+
+        <div class="experience-description">
+          <p>
+            Completed a four-week internship focused on emerging technologies,
+            gaining practical exposure through learning resources, technical
+            tasks, and project-oriented work.
+          </p>
+
+          <p>
+            The internship provided hands-on exploration across{" "}
+            <span>Agentic AI</span>,{" "}
+            <span>Cybersecurity</span>,{" "}
+            <span>Quantum Computing</span>, and{" "}
+            <span>Cloud Computing</span>.
+          </p>
+        </div>
+
+        <!-- Focus Areas -->
+        <div class="experience-focus">
+
+          <p class="focus-title">Areas explored</p>
+
+          <div class="focus-grid">
+            <div class="focus-item">
+              <span class="focus-number">01</span>
+              <span>Agentic AI</span>
+            </div>
+
+            <div class="focus-item">
+              <span class="focus-number">02</span>
+              <span>Cybersecurity</span>
+            </div>
+
+            <div class="focus-item">
+              <span class="focus-number">03</span>
+              <span>Quantum Computing</span>
+            </div>
+
+            <div class="focus-item">
+              <span class="focus-number">04</span>
+              <span>Cloud Computing</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom -->
+      <div class="experience-bottom">
+        <span>IBM SkillsBuild</span>
+        <span class="bottom-dot"></span>
+        <span>Practical Learning</span>
+        <span class="bottom-dot"></span>
+        <span>Emerging Technologies</span>
+      </div>
+
+      <!-- Certificate -->
+      <div class="experience-certificate">
+        <a
+          href="/certificates/internship-completion.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="certificate-link"
+        >
+          <span>View Internship Certificate</span>
+          <span class="certificate-arrow">↗</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-section {
+    position: relative;
+  }
+
+  /* Ambient glow */
+  .experience-glow {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(100px);
+    opacity: 0.08;
+  }
+
+  .experience-glow-one {
+    background: #a476ff;
+    top: 10%;
+    right: -180px;
+  }
+
+  .experience-glow-two {
+    background: #6d4bb5;
+    bottom: -200px;
+    left: -180px;
+  }
+
+  /* Header */
+  .experience-header {
+    max-width: 800px;
+  }
+
+  .experience-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--white-icon);
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .experience-label-line {
+    width: 55px;
+    height: 1px;
+    background: rgba(164, 118, 255, 0.6);
+  }
+
+  .experience-gradient-text {
+    background: linear-gradient(
+      135deg,
+      #a476ff 20%,
+      #eee5ff 50%,
+      #a476ff 80%
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: experience-shine 5s linear infinite;
+  }
+
+  .experience-intro {
+    margin-top: 20px;
+    max-width: 650px;
+    color: var(--white-icon);
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  /* Main card */
+  .experience-card {
+    position: relative;
+    padding: 30px;
+    border: 1px solid rgba(243, 243, 243, 0.08);
+    border-radius: 24px;
+    background: rgba(20, 20, 20, 0.58);
+    backdrop-filter: blur(12px);
+    overflow: hidden;
+    transition:
+      border-color 0.35s ease,
+      transform 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+
+  .experience-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(164, 118, 255, 0.06),
+        transparent 35%,
+        transparent 70%,
+        rgba(164, 118, 255, 0.025)
+      );
+    pointer-events: none;
+  }
+
+  .experience-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(164, 118, 255, 0.25);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Top */
+  .experience-top {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .experience-status {
+    display: inline-flex;
+    padding: 6px 11px;
+    border: 1px solid rgba(164, 118, 255, 0.22);
+    border-radius: 999px;
+    color: #c6adff;
+    background: rgba(164, 118, 255, 0.07);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .experience-top h3 {
+    margin-top: 16px;
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  .experience-company {
+    margin-top: 7px;
+    color: var(--white-icon);
+    font-size: 1rem;
+  }
+
+  .experience-date {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding-top: 7px;
+    color: var(--white-icon);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  .date-arrow {
+    color: var(--sec);
+  }
+
+  /* Divider */
+  .experience-divider {
+    position: relative;
+    z-index: 1;
+    height: 1px;
+    margin: 28px 0;
+    background: rgba(243, 243, 243, 0.07);
+  }
+
+  /* Content */
+  .experience-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+
+  .experience-description {
+    color: var(--white-icon);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .experience-description p + p {
+    margin-top: 18px;
+  }
+
+  .experience-description span {
+    color: #c3a9ff;
+  }
+
+  /* Focus areas */
+  .focus-title {
+    margin-bottom: 16px;
+    color: var(--white);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .focus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .focus-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 55px;
+    padding: 12px 14px;
+    border: 1px solid rgba(243, 243, 243, 0.07);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--white);
+    font-size: 0.88rem;
+    transition:
+      border-color 0.25s ease,
+      background 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .focus-item:hover {
+    border-color: rgba(164, 118, 255, 0.2);
+    background: rgba(164, 118, 255, 0.05);
+    transform: translateY(-2px);
+  }
+
+  .focus-number {
+    color: var(--sec);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* Bottom */
+  .experience-bottom {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(243, 243, 243, 0.06);
+    color: rgba(243, 243, 243, 0.45);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .bottom-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--sec);
+  }
+
+  /* Certificate */
+  .experience-certificate {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 22px;
+  }
+
+  .certificate-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border: 1px solid rgba(164, 118, 255, 0.18);
+    border-radius: 9999px;
+    background: rgba(164, 118, 255, 0.07);
+    color: #cbb8ff;
+    font-size: 0.8rem;
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease,
+      transform 0.25s ease,
+      color 0.25s ease;
+  }
+
+  .certificate-link:hover {
+    background: rgba(164, 118, 255, 0.14);
+    border-color: rgba(164, 118, 255, 0.3);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .certificate-arrow {
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--sec);
+  }
+
+  /* Shine animation */
+  @keyframes experience-shine {
+    0% {
+      background-position: 100% 50%;
+    }
+
+    30%,
+    70% {
+      background-position: 0% 50%;
+    }
+
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .experience-card {
+      padding: 22px;
+      border-radius: 20px;
+    }
+
+    .experience-top {
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .experience-top h3 {
+      font-size: 1.45rem;
+    }
+
+    .experience-date {
+      padding-top: 0;
+    }
+
+    .experience-content {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .focus-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .experience-bottom {
+      line-height: 1.7;
+    }
+
+    .experience-certificate {
+      justify-content: flex-start;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .experience-gradient-text {
+      animation: none;
+    }
+
+    .experience-card,
+    .focus-item,
+    .certificate-link {
+      transition: none;
+    }
+  }
+</style>

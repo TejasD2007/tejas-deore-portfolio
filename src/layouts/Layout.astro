@@ -1,0 +1,911 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>{title}</title>
+
+    <meta
+      name="description"
+      content="Tejas Deore — Computer Engineering student focused on Artificial Intelligence, Machine Learning, AI agents, Generative AI, and software development."
+    />
+
+    <meta
+      name="keywords"
+      content="Tejas Deore, Computer Engineering, Artificial Intelligence, Machine Learning, AI Agents, Generative AI, Python, C++, JavaScript, Software Development, Pune"
+    />
+
+    <meta name="author" content="Tejas Deore" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <meta name="theme-color" content="#101010" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Canonical URL -->
+
+    <link
+      rel="canonical"
+      href="https://YOUR-DOMAIN.com/"
+    />
+
+    <!-- Font -->
+
+    <link
+      rel="preload"
+      href="/fonts/montserrat-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <!-- Open Graph / Social Sharing -->
+
+    <meta
+      property="og:title"
+      content="Tejas Deore | Computer Engineering Student"
+    />
+
+    <meta
+      property="og:description"
+      content="Portfolio of Tejas Deore — Computer Engineering student focused on AI, Machine Learning, Generative AI, and software development."
+    />
+
+    <meta
+      property="og:image"
+      content="https://YOUR-DOMAIN.com/og.image.png"
+    />
+
+    <meta
+      property="og:url"
+      content="https://YOUR-DOMAIN.com/"
+    />
+
+    <meta property="og:type" content="website" />
+
+    <meta
+      property="og:site_name"
+      content="Tejas Deore | Portfolio"
+    />
+
+    <!-- Twitter / X -->
+
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+
+    <meta
+      name="twitter:title"
+      content="Tejas Deore | Computer Engineering Student"
+    />
+
+    <meta
+      name="twitter:description"
+      content="Portfolio of Tejas Deore — Computer Engineering student focused on AI, Machine Learning, Generative AI, and software development."
+    />
+
+    <meta
+      name="twitter:image"
+      content="https://YOUR-DOMAIN.com/og.image.png"
+    />
+
+    <!-- Structured Data -->
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tejas Deore",
+        "url": "https://YOUR-DOMAIN.com/",
+        "image": "https://YOUR-DOMAIN.com/og.image.png",
+        "jobTitle": "Computer Engineering Student",
+        "description": "Computer Engineering student focused on Artificial Intelligence, Machine Learning, AI agents, Generative AI, and software development.",
+        "sameAs": [
+          "https://github.com/TejasD2007",
+          "https://www.linkedin.com/in/tejas-deore-1506343b1/",
+          "https://unfilteredgenz.blogspot.com"
+        ]
+      }
+    </script>
+  </head>
+
+  <body class="bg-[--background] sm:px-28 lg:px-20 px-9">
+
+    <!-- =========================================
+         SUBTLE AMBIENT BACKGROUND
+         ========================================= -->
+
+    <div
+      class="ambient-background"
+      aria-hidden="true"
+    >
+      <div class="ambient-glow ambient-glow-one"></div>
+      <div class="ambient-glow ambient-glow-two"></div>
+    </div>
+
+
+    <!-- =========================================
+         SUBTLE MOUSE-FOLLOW GLOW
+         ========================================= -->
+
+    <div
+      id="mouse-glow"
+      aria-hidden="true"
+    ></div>
+
+
+    <slot />
+
+  </body>
+</html>
+
+
+<!-- =========================================
+     SCROLL REVEAL + MOUSE GLOW
+     ========================================= -->
+
+<script>
+
+  /* =========================================
+     SCROLL REVEAL
+     ========================================= */
+
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+  const revealObserver =
+    new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+          } else {
+
+            entry.target.classList.remove(
+              "visible"
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12,
+      }
+    );
+
+
+  revealElements.forEach((element) => {
+
+    revealObserver.observe(element);
+
+  });
+
+
+
+  /* =========================================
+     MOUSE-FOLLOW GLOW
+     ========================================= */
+
+  const mouseGlow =
+    document.getElementById("mouse-glow");
+
+
+  /*
+   * Explicitly check that the element is an HTMLElement.
+   * The separate glowElement reference prevents TypeScript
+   * from reporting a possible null value inside animateGlow().
+   */
+
+  if (mouseGlow instanceof HTMLElement) {
+
+    const glowElement = mouseGlow;
+
+
+    let currentX =
+      window.innerWidth / 2;
+
+    let currentY =
+      window.innerHeight / 2;
+
+    let targetX =
+      currentX;
+
+    let targetY =
+      currentY;
+
+
+    /* Track mouse position */
+
+    window.addEventListener(
+      "mousemove",
+      (event: MouseEvent) => {
+
+        targetX =
+          event.clientX;
+
+        targetY =
+          event.clientY;
+
+        document.body.classList.add(
+          "mouse-active"
+        );
+
+      },
+      {
+        passive: true,
+      }
+    );
+
+
+    /* Smoothly follow the cursor */
+
+    function animateGlow() {
+
+      currentX +=
+        (targetX - currentX) * 0.08;
+
+      currentY +=
+        (targetY - currentY) * 0.08;
+
+
+      glowElement.style.transform =
+        `translate3d(${currentX}px, ${currentY}px, 0) translate3d(-50%, -50%, 0)`;
+
+
+      requestAnimationFrame(
+        animateGlow
+      );
+
+    }
+
+
+    animateGlow();
+
+
+    /* Hide when cursor leaves the page */
+
+    document.addEventListener(
+      "mouseleave",
+      () => {
+
+        document.body.classList.remove(
+          "mouse-active"
+        );
+
+      }
+    );
+
+
+    /* Show again when cursor returns */
+
+    document.addEventListener(
+      "mouseenter",
+      () => {
+
+        document.body.classList.add(
+          "mouse-active"
+        );
+
+      }
+    );
+
+  }
+
+</script>
+
+
+<style is:global>
+
+  /* =========================================
+     FONT
+     ========================================= */
+
+  @font-face {
+
+    font-family:
+      "Montserrat Variable";
+
+    src:
+      url(
+        "/fonts/montserrat-latin-wght-normal.woff2"
+      )
+      format("woff2-variations");
+
+    font-weight:
+      100 900;
+
+    font-style:
+      normal;
+
+    font-display:
+      swap;
+
+  }
+
+
+
+  /* =========================================
+     ROOT VARIABLES
+     ========================================= */
+
+  :root {
+
+    --background:
+      #101010;
+
+    --sec:
+      #a476ff;
+
+    --white:
+      #dfdfdf;
+
+    --white-icon:
+      #f3f3f398;
+
+    --white-icon-tr:
+      #f3f3f310;
+
+  }
+
+
+
+  /* =========================================
+     GLOBAL RESET
+     ========================================= */
+
+  * {
+
+    font-family:
+      "Montserrat Variable",
+      -apple-system,
+      system-ui,
+      sans-serif;
+
+    box-sizing:
+      border-box;
+
+    padding:
+      0;
+
+    margin:
+      0;
+
+  }
+
+
+  *::selection {
+
+    background-color:
+      var(--sec);
+
+    color:
+      var(--background);
+
+  }
+
+
+
+  /* =========================================
+     SCROLLBAR
+     ========================================= */
+
+  ::-webkit-scrollbar {
+
+    width:
+      15px;
+
+  }
+
+
+  ::-webkit-scrollbar-track {
+
+    background:
+      var(--container);
+
+    border-radius:
+      30px;
+
+  }
+
+
+  ::-webkit-scrollbar-thumb {
+
+    background:
+      var(--background);
+
+    border-radius:
+      10px;
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:hover {
+
+    background:
+      var(--pink);
+
+  }
+
+
+  /* Firefox */
+
+  * {
+
+    scrollbar-width:
+      thin;
+
+    scrollbar-color:
+      var(--line)
+      var(--container);
+
+  }
+
+
+
+  /* =========================================
+     SCROLL REVEAL
+     ========================================= */
+
+  .reveal {
+
+    opacity:
+      0;
+
+    transform:
+      translateY(28px);
+
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+
+  }
+
+
+  .reveal.visible {
+
+    opacity:
+      1;
+
+    transform:
+      translateY(0);
+
+  }
+
+
+
+  /* =========================================
+     SUBTLE AMBIENT BACKGROUND
+     ========================================= */
+
+  .ambient-background {
+
+    position:
+      fixed;
+
+    inset:
+      0;
+
+    pointer-events:
+      none;
+
+    overflow:
+      hidden;
+
+    z-index:
+      -1;
+
+  }
+
+
+  .ambient-glow {
+
+    position:
+      absolute;
+
+    width:
+      420px;
+
+    height:
+      420px;
+
+    border-radius:
+      50%;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(164, 118, 255, 0.035) 0%,
+        rgba(164, 118, 255, 0.018) 35%,
+        transparent 70%
+      );
+
+    filter:
+      blur(30px);
+
+    opacity:
+      0.7;
+
+    will-change:
+      transform;
+
+  }
+
+
+  .ambient-glow-one {
+
+    top:
+      8%;
+
+    left:
+      -8%;
+
+    animation:
+      ambientFloatOne 18s ease-in-out infinite alternate;
+
+  }
+
+
+  .ambient-glow-two {
+
+    top:
+      48%;
+
+    right:
+      -10%;
+
+    animation:
+      ambientFloatTwo 22s ease-in-out infinite alternate;
+
+  }
+
+
+  @keyframes ambientFloatOne {
+
+    from {
+
+      transform:
+        translate3d(0, 0, 0)
+        scale(1);
+
+    }
+
+    to {
+
+      transform:
+        translate3d(70px, 40px, 0)
+        scale(1.08);
+
+    }
+
+  }
+
+
+  @keyframes ambientFloatTwo {
+
+    from {
+
+      transform:
+        translate3d(0, 0, 0)
+        scale(1);
+
+    }
+
+    to {
+
+      transform:
+        translate3d(-60px, -50px, 0)
+        scale(1.06);
+
+    }
+
+  }
+
+
+
+  /* =========================================
+     SUBTLE MOUSE-FOLLOW GLOW
+     ========================================= */
+
+  #mouse-glow {
+
+    position:
+      fixed;
+
+    width:
+      320px;
+
+    height:
+      320px;
+
+    left:
+      0;
+
+    top:
+      0;
+
+    pointer-events:
+      none;
+
+    border-radius:
+      50%;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(164, 118, 255, 0.07) 0%,
+        rgba(164, 118, 255, 0.035) 30%,
+        rgba(164, 118, 255, 0.012) 55%,
+        transparent 72%
+      );
+
+    filter:
+      blur(25px);
+
+    transform:
+      translate3d(
+        -50%,
+        -50%,
+        0
+      );
+
+    z-index:
+      0;
+
+    opacity:
+      0;
+
+    transition:
+      opacity 0.4s ease;
+
+    will-change:
+      transform;
+
+  }
+
+
+  /* Glow appears once the mouse moves */
+
+  body.mouse-active #mouse-glow {
+
+    opacity:
+      1;
+
+  }
+
+
+
+  /* =========================================
+     TOUCH DEVICES
+     ========================================= */
+
+  @media (hover: none), (pointer: coarse) {
+
+    #mouse-glow {
+
+      display:
+        none;
+
+    }
+
+
+    .ambient-glow {
+
+      animation:
+        none;
+
+    }
+
+  }
+
+
+
+  /* =========================================
+     REDUCED MOTION
+     ========================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .reveal {
+
+      opacity:
+        1;
+
+      transform:
+        none;
+
+      transition:
+        none;
+
+    }
+
+
+    #mouse-glow {
+
+      display:
+        none;
+
+    }
+
+
+    .ambient-glow {
+
+      animation:
+        none;
+
+    }
+
+  }
+
+
+  /* =========================================
+     MOBILE OPTIMIZATION
+     ========================================= */
+
+  @media (max-width: 768px) {
+
+    /* Prevent horizontal overflow */
+
+    html,
+    body {
+
+      width:
+        100%;
+
+      max-width:
+        100%;
+
+      overflow-x:
+        hidden;
+
+    }
+
+
+    /* Slightly tighter mobile page spacing */
+
+    body {
+
+      padding-left:
+        1.25rem !important;
+
+      padding-right:
+        1.25rem !important;
+
+    }
+
+
+    /* Prevent long text from causing overflow */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    a,
+    span {
+
+      overflow-wrap:
+        break-word;
+
+    }
+
+
+    /* Keep media inside viewport */
+
+    img,
+    video,
+    svg {
+
+      max-width:
+        100%;
+
+    }
+
+
+    /* Improve tap interaction */
+
+    button,
+    a {
+
+      -webkit-tap-highlight-color:
+        transparent;
+
+    }
+
+
+    /* Reduce excessive reveal movement */
+
+    .reveal {
+
+      transform:
+        translateY(18px);
+
+    }
+
+
+    /* Ambient background becomes smaller */
+
+    .ambient-glow {
+
+      width:
+        280px;
+
+      height:
+        280px;
+
+      filter:
+        blur(25px);
+
+      opacity:
+        0.5;
+
+    }
+
+
+    /* Smaller scrollbar on mobile */
+
+    ::-webkit-scrollbar {
+
+      width:
+        8px;
+
+    }
+
+  }
+
+
+
+  /* =========================================
+     VERY SMALL PHONES
+     ========================================= */
+
+  @media (max-width: 480px) {
+
+    body {
+
+      padding-left:
+        1rem !important;
+
+      padding-right:
+        1rem !important;
+
+    }
+
+
+    .ambient-glow {
+
+      width:
+        220px;
+
+      height:
+        220px;
+
+      opacity:
+        0.4;
+
+    }
+
+  }
+
+</style>

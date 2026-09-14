@@ -1,0 +1,237 @@
+---
+interface NavItem {
+  label: string;
+  href: string;
+  icon: string;
+}
+
+const navItems: NavItem[] = [
+  {
+    label: "Home",
+    href: "#home",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM19 19V9.97815L12 4.53371L5 9.97815V19H19Z"></path></svg>`,
+  },
+  {
+    label: "About",
+    href: "#about",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2Zm0 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 14a7.96 7.96 0 0 1-5.03-1.79A5.99 5.99 0 0 1 12 15a5.99 5.99 0 0 1 5.03 3.21A7.96 7.96 0 0 1 12 20Z"></path></svg>`,
+  },
+  {
+    label: "Experience",
+    href: "#experience",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M9 3H15C16.1046 3 17 3.89543 17 5V6H20C21.1046 6 22 6.89543 22 8V19C22 20.1046 21.1046 21 20 21H4C2.89543 21 2 20.1046 2 19V8C2 6.89543 2.89543 6 4 6H7V5C7 3.89543 7.89543 3 9 3ZM9 5V6H15V5H9ZM4 8V19H20V8H4ZM10 10H14V13H17V16H14V19H10V16H7V13H10V10Z"></path></svg>`,
+  },
+  {
+    label: "Projects",
+    href: "#projects",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4 5V19H20V7H11.5858L9.58579 5H4ZM12.4142 5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.1046 21 20 21H3C2.44772 21 2 20.5523 3 21V4C2 3.44772 2.44772 3 3 3H10.4142L12.4142 5Z"></path></svg>`,
+  },
+  {
+    label: "Certificates",
+    href: "#certificates",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2 3 5.5V11c0 5.25 3.84 9.97 9 11 5.16-1.03 9-5.75 9-11V5.5L12 2Zm0 2.15 6.8 2.64V11c0 4.13-2.8 7.98-6.8 9.02C8 18.98 5.2 15.13 5.2 11V6.79L12 4.15ZM10.8 13.8 8.7 11.7l-1.4 1.4 3.5 3.5 5.9-5.9-1.4-1.4-4.5 4.5Z"></path></svg>`,
+  },
+  {
+    label: "Contact",
+    href: "#contact",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21.7267 2.95694L16.2734 22.0432C16.1225 22.5716 15.7979 22.5956 15.5563 22.1126L11 13L1.9229 9.36919C1.41322 9.16532 1.41953 8.86022 1.95695 8.68108L21.0432 2.31901C21.5716 2.14285 21.8747 2.43866 21.7267 2.95694ZM19.0353 5.09647L6.81221 9.17085L12.4488 11.4255L15.4895 17.5068L19.0353 5.09647Z"></path></svg>`,
+  },
+];
+---
+
+<div class="flex justify-center w-full">
+  <nav
+    id="main-nav"
+    class="fixed left-1/2 -translate-x-1/2 z-[100] backdrop-blur-xl transition-all duration-300 ease-in-out md:top-6 md:bottom-auto bottom-0 w-max max-w-[95vw]"
+  >
+    <div class="container mx-auto flex justify-center items-center px-3 py-2">
+      <ul
+        class="flex items-center justify-center gap-1 md:gap-2 whitespace-nowrap"
+      >
+        {
+          navItems.map((item) => (
+            <li class="shrink-0">
+              <a
+                href={item.href}
+                class="flex items-center justify-center px-4 py-2 rounded-full text-[var(--white-icon)] transition-all duration-300 text-xs md:text-base relative group whitespace-nowrap"
+              >
+                <span class="md:hidden flex items-center justify-center w-6 h-6">
+                  <fragment set:html={item.icon} />
+                </span>
+
+                <span class="hidden md:inline-block">
+                  {item.label}
+                </span>
+
+                <span class="md:hidden">
+                  {item.label}
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<style>
+  nav {
+    transform: translateX(-50%);
+    background: rgba(16, 16, 16, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 9999px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  nav.scrolling {
+    background: rgba(20, 20, 20, 0.72);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Active pill */
+  nav a.active {
+    color: white !important;
+    background: rgba(164, 118, 255, 0.18);
+    box-shadow:
+      inset 0 0 0 1px rgba(164, 118, 255, 0.18),
+      0 4px 20px rgba(164, 118, 255, 0.08);
+  }
+
+  /* Hover */
+  nav a:hover {
+    color: white;
+    background: rgba(164, 118, 255, 0.08);
+  }
+
+  /* Mobile */
+  @media (max-width: 767px) {
+    nav {
+      width: 100% !important;
+      max-width: 100%;
+      transform: translateX(-50%);
+      bottom: 0;
+      left: 50%;
+      position: fixed;
+      border-radius: 1rem 1rem 0 0;
+      border-color: #ffffff10;
+      background: rgba(16, 16, 16, 0.92);
+    }
+
+    nav.scrolling {
+      border-radius: 1rem 1rem 0 0;
+      background: rgba(20, 20, 20, 0.94);
+    }
+
+    body {
+      padding-bottom: 70px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    nav,
+    nav a {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  function updateActiveSection() {
+    const sections = Array.from(
+      document.querySelectorAll("section[id]")
+    ) as HTMLElement[];
+
+    const navLinks = document.querySelectorAll(
+      'nav a[href^="#"]'
+    );
+
+    if (!sections.length) return;
+
+    const offset = 120;
+
+    let currentSection = sections[0];
+
+    for (const section of sections) {
+      const rect = section.getBoundingClientRect();
+
+      if (rect.top <= offset) {
+        currentSection = section;
+      }
+    }
+
+    // At the very bottom of the page,
+    // Contact should always be the active section.
+    const atBottom =
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - 5;
+
+    if (atBottom) {
+      currentSection = sections[sections.length - 1];
+    }
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+    });
+
+    const activeLink = document.querySelector(
+      `nav a[href="#${currentSection.id}"]`
+    );
+
+    if (activeLink) {
+      activeLink.classList.add("active");
+    }
+  }
+
+  // Update active pill while scrolling
+  window.addEventListener("scroll", updateActiveSection, {
+    passive: true,
+  });
+
+  // Update after resizing
+  window.addEventListener("resize", updateActiveSection);
+
+  // Handle navigation clicks
+  document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href");
+
+      if (!href) return;
+
+      const target = document.querySelector(
+        href
+      ) as HTMLElement | null;
+
+      if (!target) return;
+
+      event.preventDefault();
+
+      const navOffset = 100;
+
+      const targetPosition =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        navOffset;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+
+      // Immediately activate the clicked item
+      document.querySelectorAll('nav a[href^="#"]').forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      link.classList.add("active");
+    });
+  });
+
+  // Set initial active section
+  updateActiveSection();
+</script>

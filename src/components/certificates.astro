@@ -1,0 +1,1297 @@
+---
+interface Certificate {
+  title: string;
+  issuer: string;
+  image: string;
+}
+
+const certifications: Certificate[] = [
+  {
+    title: "Artificial Intelligence Fundamentals",
+    issuer: "Cisco Networking Academy",
+    image: "/certificates/ai-fundamentals.png",
+  },
+
+  {
+    title: "Emerging Technologies Internship",
+    issuer: "Edunet Foundation & AICTE",
+    image: "/certificates/internship-completion.png",
+  },
+
+  {
+    title: "Machine Learning Fundamentals",
+    issuer: "Cisco Networking Academy",
+    image: "/certificates/machine-learning-fundamentals.png",
+  },
+
+  {
+    title: "Python Essentials 1",
+    issuer: "Cisco Networking Academy",
+    image: "/certificates/python-essentials-1.png",
+  },
+
+  {
+    title: "Python Essentials 2",
+    issuer: "Cisco Networking Academy",
+    image: "/certificates/python-essentials-2.png",
+  },
+
+  {
+    title: "JavaScript Essentials 1",
+    issuer: "Cisco Networking Academy",
+    image: "/certificates/javascript-essentials-1.png",
+  },
+
+  {
+    title: "JavaScript Essentials 2",
+    issuer: "Cisco Networking Academy",
+    image: "/certificates/javascript-essentials-2.png",
+  },
+
+  {
+    title: "Digital 101 — 30 Hours",
+    issuer: "Edunet Foundation",
+    image: "/certificates/digital-101.png",
+  },
+
+  {
+    title: "Claude 101",
+    issuer: "Anthropic",
+    image: "/certificates/claude-101.png",
+  },
+
+  {
+    title: "AI Fluency — Frameworks & Foundations",
+    issuer: "Anthropic",
+    image: "/certificates/ai-fluency.png",
+  },
+
+  {
+    title: "Getting Started with Artificial Intelligence",
+    issuer: "IBM",
+    image: "/certificates/getting-started-ai.png",
+  },
+
+  {
+    title: "Journey to Cloud — Envisioning Your Solution",
+    issuer: "IBM",
+    image: "/certificates/journey-to-cloud.png",
+  },
+];
+
+const achievements = [
+  {
+    title: "Datathon 2026 — Team Aurex",
+    description:
+      "Participated in Datathon 2026 as a member of Team Aurex.",
+    image: "/certificates/datathon-2026.png",
+  },
+];
+---
+
+<section
+  id="certificates"
+  class="reveal py-12 border-t border-[#ffffff10] text-[var(--white)]"
+>
+  <div class="max-w-5xl mx-auto">
+
+    <!-- =========================
+         SECTION HEADING
+         ========================= -->
+
+    <div class="certificate-heading">
+      <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">
+        Certifications & Achievements
+      </h2>
+
+      <h3 class="text-4xl md:text-5xl font-medium mb-10">
+        Learning & Recognition
+      </h3>
+    </div>
+
+
+    <!-- =========================
+         CERTIFICATIONS
+         ========================= -->
+
+    <div>
+
+      <h4 class="text-2xl md:text-3xl font-medium mb-6">
+        Certifications
+      </h4>
+
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        {certifications.map((certificate) => (
+
+          <div
+            class="certificate-card group"
+            data-certificate-image={certificate.image}
+            data-certificate-title={certificate.title}
+            data-certificate-issuer={certificate.issuer}
+            tabindex="0"
+            role="button"
+            aria-label={`View ${certificate.title} certificate`}
+          >
+
+            <!-- Certificate Image -->
+
+            <div class="certificate-image-wrapper">
+
+              <img
+                src={certificate.image}
+                alt={`${certificate.title} certificate`}
+                class="certificate-image"
+                loading="lazy"
+              />
+
+              <!-- Hover Overlay -->
+
+              <div class="certificate-overlay">
+
+                <div class="view-icon">
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+
+                </div>
+
+                <span>View Certificate</span>
+
+              </div>
+
+            </div>
+
+
+            <!-- Certificate Details -->
+
+            <div class="certificate-details">
+
+              <h5>
+                {certificate.title}
+              </h5>
+
+              <p>
+                {certificate.issuer}
+              </p>
+
+            </div>
+
+          </div>
+
+        ))}
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         ACHIEVEMENTS
+         ========================= -->
+
+    <div class="mt-16">
+
+      <h4 class="text-2xl md:text-3xl font-medium mb-6">
+        Achievements
+      </h4>
+
+
+      <div class="space-y-6">
+
+        {achievements.map((achievement) => (
+
+          <div
+            class="achievement-card group"
+            data-certificate-image={achievement.image}
+            data-certificate-title={achievement.title}
+            data-certificate-issuer="Achievement"
+            tabindex="0"
+            role="button"
+            aria-label={`View ${achievement.title}`}
+          >
+
+            <div class="flex flex-col md:flex-row">
+
+              <!-- Achievement Image -->
+
+              <div class="achievement-image-wrapper md:w-2/5">
+
+                <img
+                  src={achievement.image}
+                  alt={`${achievement.title} certificate`}
+                  class="achievement-image"
+                  loading="lazy"
+                />
+
+                <div class="certificate-overlay">
+
+                  <div class="view-icon">
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+
+                  </div>
+
+                  <span>View Certificate</span>
+
+                </div>
+
+              </div>
+
+
+              <!-- Achievement Details -->
+
+              <div class="flex-1 p-6 md:p-8">
+
+                <div class="flex items-start gap-4">
+
+                  <div
+                    class="size-12 shrink-0 flex items-center justify-center rounded-xl border border-[var(--white-icon-tr)] bg-[#141414]"
+                  >
+                    <span class="text-2xl">🏆</span>
+                  </div>
+
+
+                  <div>
+
+                    <h5 class="text-xl md:text-2xl font-semibold">
+                      {achievement.title}
+                    </h5>
+
+                    <p
+                      class="text-[var(--white-icon)] text-sm md:text-base mt-2 leading-relaxed"
+                    >
+                      {achievement.description}
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        ))}
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     CERTIFICATE MODAL
+     ========================= -->
+
+<div
+  id="certificate-modal"
+  class="certificate-modal"
+  aria-hidden="true"
+>
+
+  <div class="modal-backdrop"></div>
+
+  <div
+    class="modal-content"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+  >
+
+    <!-- Close Button -->
+
+    <button
+      id="certificate-modal-close"
+      class="modal-close"
+      type="button"
+      aria-label="Close certificate viewer"
+    >
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 6 6 18" />
+        <path d="m6 6 12 12" />
+      </svg>
+
+    </button>
+
+
+    <!-- Certificate -->
+
+    <div class="modal-image-container">
+
+      <img
+        id="modal-certificate-image"
+        src=""
+        alt=""
+      />
+
+    </div>
+
+
+    <!-- Modal Information -->
+
+    <div class="modal-info">
+
+      <div>
+
+        <h3 id="modal-title"></h3>
+
+        <p id="modal-issuer"></p>
+
+      </div>
+
+      <span class="modal-hint">
+        Click outside to close
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+  const modal = document.getElementById(
+    "certificate-modal"
+  );
+
+  const modalImage = document.getElementById(
+    "modal-certificate-image"
+  ) as HTMLImageElement | null;
+
+  const modalTitle = document.getElementById(
+    "modal-title"
+  );
+
+  const modalIssuer = document.getElementById(
+    "modal-issuer"
+  );
+
+  const closeButton = document.getElementById(
+    "certificate-modal-close"
+  );
+
+  const backdrop = modal?.querySelector(
+    ".modal-backdrop"
+  );
+
+
+  /* FIX:
+     Explicitly type the queried cards as HTMLElements
+     so KeyboardEvent is accepted by addEventListener.
+  */
+
+  const certificateCards =
+    document.querySelectorAll<HTMLElement>(
+      ".certificate-card, .achievement-card"
+    );
+
+
+  function openCertificate(card: Element) {
+
+    if (!modal || !modalImage) return;
+
+    const image =
+      card.getAttribute(
+        "data-certificate-image"
+      );
+
+    const title =
+      card.getAttribute(
+        "data-certificate-title"
+      );
+
+    const issuer =
+      card.getAttribute(
+        "data-certificate-issuer"
+      );
+
+
+    if (!image) return;
+
+
+    modalImage.src = image;
+
+    modalImage.alt =
+      title
+        ? `${title} certificate`
+        : "Certificate";
+
+
+    if (modalTitle) {
+      modalTitle.textContent =
+        title || "";
+    }
+
+
+    if (modalIssuer) {
+      modalIssuer.textContent =
+        issuer || "";
+    }
+
+
+    modal.classList.add("is-open");
+
+    modal.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+    document.body.classList.add(
+      "certificate-modal-open"
+    );
+
+
+    closeButton?.focus();
+
+  }
+
+
+  function closeCertificate() {
+
+    if (!modal) return;
+
+
+    modal.classList.remove(
+      "is-open"
+    );
+
+
+    modal.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+    document.body.classList.remove(
+      "certificate-modal-open"
+    );
+
+
+    setTimeout(() => {
+
+      if (modalImage) {
+        modalImage.src = "";
+      }
+
+    }, 300);
+
+  }
+
+
+  certificateCards.forEach((card) => {
+
+    card.addEventListener(
+      "click",
+      () => {
+        openCertificate(card);
+      }
+    );
+
+
+    card.addEventListener(
+      "keydown",
+      (event: KeyboardEvent) => {
+
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+
+          event.preventDefault();
+
+          openCertificate(card);
+
+        }
+
+      }
+    );
+
+  });
+
+
+  closeButton?.addEventListener(
+    "click",
+    closeCertificate
+  );
+
+
+  backdrop?.addEventListener(
+    "click",
+    closeCertificate
+  );
+
+
+  document.addEventListener(
+    "keydown",
+    (event: KeyboardEvent) => {
+
+      if (
+        event.key === "Escape" &&
+        modal?.classList.contains("is-open")
+      ) {
+
+        closeCertificate();
+
+      }
+
+    }
+  );
+</script>
+
+
+<style>
+
+  /* =========================================
+     CERTIFICATE CARDS
+     ========================================= */
+
+  .certificate-card {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+  }
+
+
+  .certificate-image-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    height: 260px;
+
+    border-radius: 18px;
+
+    border:
+      1px solid
+      var(--white-icon-tr);
+
+    background:
+      #1414149c;
+
+    box-shadow:
+      0 12px 35px
+      rgba(0, 0, 0, 0.15);
+
+    transition:
+      transform 0.4s ease,
+      border-color 0.4s ease,
+      box-shadow 0.4s ease;
+  }
+
+
+  .certificate-card:hover
+  .certificate-image-wrapper,
+  .certificate-card:focus-visible
+  .certificate-image-wrapper {
+
+    transform:
+      translateY(-6px);
+
+    border-color:
+      rgba(164, 118, 255, 0.35);
+
+    box-shadow:
+      0 20px 45px
+      rgba(0, 0, 0, 0.28),
+
+      0 0 25px
+      rgba(164, 118, 255, 0.07);
+  }
+
+
+  .certificate-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+      transform 0.5s
+      cubic-bezier(0.22, 1, 0.36, 1),
+
+      filter 0.4s ease;
+  }
+
+
+  .certificate-card:hover
+  .certificate-image {
+
+    transform:
+      scale(1.045);
+
+    filter:
+      brightness(0.72);
+  }
+
+
+  /* =========================================
+     HOVER OVERLAY
+     ========================================= */
+
+  .certificate-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    background:
+      rgba(10, 10, 10, 0.58);
+
+    color:
+      var(--white);
+
+    opacity: 0;
+
+    backdrop-filter:
+      blur(2px);
+
+    transition:
+      opacity 0.35s ease;
+  }
+
+
+  .certificate-card:hover
+  .certificate-overlay,
+  .achievement-card:hover
+  .certificate-overlay {
+
+    opacity: 1;
+  }
+
+
+  .view-icon {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border:
+      1px solid
+      rgba(164, 118, 255, 0.5);
+
+    background:
+      rgba(164, 118, 255, 0.12);
+
+    color:
+      var(--sec);
+
+    box-shadow:
+      0 0 25px
+      rgba(164, 118, 255, 0.18);
+
+    transform:
+      scale(0.8);
+
+    transition:
+      transform 0.35s
+      cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+
+  .view-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+
+  .certificate-card:hover
+  .view-icon,
+  .achievement-card:hover
+  .view-icon {
+
+    transform:
+      scale(1);
+  }
+
+
+  .certificate-overlay span {
+
+    font-size: 0.85rem;
+
+    letter-spacing:
+      0.04em;
+
+    font-weight: 500;
+  }
+
+
+  /* =========================================
+     CERTIFICATE DETAILS
+     ========================================= */
+
+  .certificate-details {
+    padding:
+      16px 12px 0;
+  }
+
+
+  .certificate-details h5 {
+    color:
+      var(--white);
+
+    font-size:
+      1.15rem;
+
+    font-weight:
+      600;
+
+    line-height:
+      1.4;
+  }
+
+
+  .certificate-details p {
+    margin-top:
+      5px;
+
+    color:
+      var(--white-icon);
+
+    font-size:
+      0.85rem;
+  }
+
+
+  /* =========================================
+     ACHIEVEMENT CARD
+     ========================================= */
+
+  .achievement-card {
+    position: relative;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    border:
+      1px solid
+      var(--white-icon-tr);
+
+    border-radius:
+      18px;
+
+    background:
+      #1414149c;
+
+    transition:
+      transform 0.4s ease,
+      border-color 0.4s ease,
+      box-shadow 0.4s ease;
+  }
+
+
+  .achievement-card:hover,
+  .achievement-card:focus-visible {
+
+    transform:
+      translateY(-5px);
+
+    border-color:
+      rgba(164, 118, 255, 0.3);
+
+    box-shadow:
+      0 20px 45px
+      rgba(0, 0, 0, 0.25);
+  }
+
+
+  .achievement-image-wrapper {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 230px;
+  }
+
+
+  .achievement-image {
+    width: 100%;
+    height: 100%;
+
+    min-height: 230px;
+
+    object-fit: cover;
+
+    transition:
+      transform 0.5s
+      cubic-bezier(0.22, 1, 0.36, 1),
+
+      filter 0.4s ease;
+  }
+
+
+  .achievement-card:hover
+  .achievement-image {
+
+    transform:
+      scale(1.04);
+
+    filter:
+      brightness(0.72);
+  }
+
+
+  /* =========================================
+     MODAL
+     ========================================= */
+
+  .certificate-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+
+  .certificate-modal.is-open {
+
+    visibility: visible;
+
+    opacity: 1;
+
+    pointer-events: auto;
+  }
+
+
+  .modal-backdrop {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+      rgba(5, 5, 5, 0.88);
+
+    backdrop-filter:
+      blur(12px);
+  }
+
+
+  .modal-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(
+      1100px,
+      94vw
+    );
+
+    max-height:
+      94vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border:
+      1px solid
+      rgba(164, 118, 255, 0.25);
+
+    border-radius:
+      22px;
+
+    overflow: hidden;
+
+    background:
+      #111111;
+
+    box-shadow:
+      0 30px 100px
+      rgba(0, 0, 0, 0.6),
+
+      0 0 50px
+      rgba(164, 118, 255, 0.08);
+
+    transform:
+      translateY(20px)
+      scale(0.96);
+
+    transition:
+      transform 0.35s
+      cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+
+  .certificate-modal.is-open
+  .modal-content {
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+
+  /* =========================================
+     MODAL IMAGE
+     ========================================= */
+
+  .modal-image-container {
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 0;
+
+    padding:
+      24px;
+
+    overflow: auto;
+
+    background:
+      radial-gradient(
+        circle at center,
+        rgba(164, 118, 255, 0.07),
+        transparent 60%
+      );
+  }
+
+
+  .modal-image-container img {
+
+    display: block;
+
+    max-width:
+      100%;
+
+    max-height:
+      70vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius:
+      8px;
+
+    box-shadow:
+      0 15px 50px
+      rgba(0, 0, 0, 0.4);
+  }
+
+
+  /* =========================================
+     MODAL CLOSE
+     ========================================= */
+
+  .modal-close {
+
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    z-index: 5;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.1);
+
+    border-radius:
+      50%;
+
+    background:
+      rgba(15, 15, 15, 0.8);
+
+    color:
+      var(--white);
+
+    cursor: pointer;
+
+    backdrop-filter:
+      blur(10px);
+
+    transition:
+      transform 0.25s ease,
+      background 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+
+  .modal-close:hover {
+
+    transform:
+      rotate(90deg);
+
+    background:
+      rgba(164, 118, 255, 0.15);
+
+    border-color:
+      rgba(164, 118, 255, 0.35);
+  }
+
+
+  .modal-close svg {
+
+    width: 20px;
+    height: 20px;
+  }
+
+
+  /* =========================================
+     MODAL INFO
+     ========================================= */
+
+  .modal-info {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+      18px 24px;
+
+    border-top:
+      1px solid
+      rgba(255, 255, 255, 0.06);
+
+    background:
+      rgba(20, 20, 20, 0.9);
+  }
+
+
+  .modal-info h3 {
+
+    color:
+      var(--white);
+
+    font-size:
+      1rem;
+
+    font-weight:
+      600;
+  }
+
+
+  .modal-info p {
+
+    margin-top:
+      3px;
+
+    color:
+      var(--white-icon);
+
+    font-size:
+      0.8rem;
+  }
+
+
+  .modal-hint {
+
+    color:
+      var(--white-icon);
+
+    font-size:
+      0.7rem;
+
+    white-space:
+      nowrap;
+  }
+
+
+  /* =========================================
+     BODY LOCK
+     ========================================= */
+
+  :global(body.certificate-modal-open) {
+
+    overflow: hidden;
+  }
+
+
+  /* =========================================
+     MOBILE
+     ========================================= */
+
+  @media (max-width: 768px) {
+
+    .certificate-image-wrapper {
+
+      height: 220px;
+    }
+
+
+    .certificate-details h5 {
+
+      font-size:
+        1rem;
+    }
+
+
+    .achievement-image-wrapper {
+
+      min-height:
+        210px;
+    }
+
+
+    .achievement-image {
+
+      min-height:
+        210px;
+    }
+
+
+    .modal-content {
+
+      width:
+        96vw;
+
+      max-height:
+        92vh;
+
+      border-radius:
+        18px;
+    }
+
+
+    .modal-image-container {
+
+      padding:
+        14px;
+    }
+
+
+    .modal-image-container img {
+
+      max-height:
+        68vh;
+    }
+
+
+    .modal-info {
+
+      padding:
+        14px 16px;
+    }
+
+
+    .modal-hint {
+
+      display:
+        none;
+    }
+
+
+    .modal-close {
+
+      width:
+        38px;
+
+      height:
+        38px;
+    }
+
+  }
+
+
+  /* =========================================
+     REDUCED MOTION
+     ========================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .certificate-image-wrapper,
+    .certificate-image,
+    .certificate-overlay,
+    .view-icon,
+    .achievement-card,
+    .achievement-image,
+    .certificate-modal,
+    .modal-content,
+    .modal-close {
+
+      transition:
+        none !important;
+    }
+
+  }
+
+</style>
